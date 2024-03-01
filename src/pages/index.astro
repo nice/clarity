@@ -9,15 +9,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Clarity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="font-body">
     <div class="container mx-auto">
       <div>
         <nav class="my-14">
           <div class="flex justify-between items-center">
             <div>
-              <span class="text-2xl">Sean O'Connel</span>
+              <span class="text-2xl font-medium">Clarity</span>
             </div>
 
             <ul
@@ -132,12 +139,52 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </div>
       <!-- .grid -->
 
-      <div class="flex justify-end my-12 text-2xl">
-        <div class="">Next =></div>
-      </div>
-      <footer>
+      <!-- pagination -->
+      <div class="flex justify-between my-12">
         <div>
-          <div></div>
+          <div class="text-2xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 inline"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+            </svg>
+            <span>Previous</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-2xl">
+            <span>Next</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 inline"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-1 border-dashed border-gray-300" />
+
+      <footer class="my-6">
+        <div class="flex justify-center">
+          <div>&copy; 2024 Clarity Inc.</div>
         </div>
       </footer>
     </div>

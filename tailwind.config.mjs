@@ -6,6 +6,9 @@ export default {
       screens: {
         "2xl": "1280px",
       },
+      fontFamily: {
+        body: ["Open Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],
