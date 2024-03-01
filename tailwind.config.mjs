@@ -2,13 +2,11 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    screens: {
-      "2xl": "1526px",
+    extend: {
+      screens: {
+        "2xl": "1280px",
+      },
     },
-    container: {
-      padding: "2rem",
-    },
-    extend: {},
   },
   plugins: [],
 };
