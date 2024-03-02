@@ -18,6 +18,6 @@ export default {
       },
     },
   },
-  safelist: ["h-64", "h-96", "h-128"],
-  plugins: [],
+  safelist: ["h-64", "h-96", "h-128", "rounded-xl"],
+  plugins: [require("@tailwindcss/typography")],
 };
