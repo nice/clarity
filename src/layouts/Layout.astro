@@ -1,0 +1,48 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clarity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="font-body">
+    <div class="container mx-auto">
+      <Header />
+      <main class="min-h-96"><slot /></main>
+      <hr class="border-1 border-dashed border-gray-300 my-6" />
+
+      <footer class="my-6">
+        <div class="flex justify-center">
+          <div>&copy; 2024 Clarity Inc.</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="https://unpkg.com/colcade@0/colcade.js"
+  ></script>
+
+  <script type="text/javascript">
+    var colc = new Colcade(".grid", {
+      columns: ".grid-col",
+      items: ".grid-item",
+    });
+  </script>
+
+  <style>
+    .smooth {
+      transform: translate3d(0, 0, 1px);
+    }
+  </style>
+</html>
