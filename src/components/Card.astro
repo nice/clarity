@@ -1,5 +1,13 @@
 ---
+interface Props {
+  title: string;
+  excerpt: string;
+  imageAlt: string;
+  imageUrl: string;
+  pubDate: string;
+}
 
+const { title, excerpt, imageUrl, imageAlt, pubDate } = Astro.props;
 ---
 
 <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
@@ -7,9 +15,9 @@
     <div class="group">
       <div class="h-64 overflow-hidden bg-center bg-cover relative">
         <img
-          alt=""
-          src="https://fastly.picsum.photos/id/628/536/354.jpg?hmac=W_-CeOM1wK13bBoAisLYOEJaIZwd9r2wM5VpQBb7uKA"
-          class="h-64 w-full object-cover smooth"
+          alt={imageAlt}
+          src={imageUrl}
+          class="h-64 w-full object-cover smooth bg-gray-100 text-gray-100"
         />
         <div
           class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
@@ -24,14 +32,10 @@
         </div>
       </div>
       <div class="p-6">
-        <h3 class="text-xl mb-4">Just another post.</h3>
-        <p>
-          Augue interdum velit euismod in pellentesque massa placerat duis
-          ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis
-          tincidunt id aliquet risus feugiat in ante metus, dictum at tempor.
-        </p>
+        <h3 class="text-xl mb-4">{title}</h3>
+        <p>{excerpt}</p>
         <div class="mt-4 text-xs text-gray-400">
-          <span>March 10, 1992</span>
+          <span>{pubDate}</span>
         </div>
       </div>
     </div>

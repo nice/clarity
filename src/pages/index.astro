@@ -51,8 +51,19 @@ import ImageCard from "../components/ImageCard.astro";
           <div class="grid-col w-1/3 hidden lg:block"></div>
         </div>
 
-        <Card />
-        <TextCard />
+        <Card
+          title="Just another post"
+          excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
+          imageUrl="https://fastly.picsum.photos/id/628/536/354.jpg?hmac=W_-CeOM1wK13bBoAisLYOEJaIZwd9r2wM5VpQBb7uKA"
+          imageAlt="hello world"
+          pubDate="Mar 10, 1992"
+        />
+
+        <TextCard
+          title="Just another post"
+          excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
+          pubDate="Mar 10, 1992"
+        />
 
         <div
           class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
@@ -95,7 +106,12 @@ import ImageCard from "../components/ImageCard.astro";
           </div>
         </div>
 
-        <ImageCard />
+        <ImageCard
+          title="Just another post"
+          imageUrl="https://picsum.photos/611/411"
+          imageAlt="hello world"
+          pubDate="Mar 10, 1992"
+        />
 
         <div
           class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
