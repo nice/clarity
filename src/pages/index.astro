@@ -25,7 +25,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           <div class="flex justify-between items-center">
             <div>
               <a href="">
-                <span class="text-2xl font-medium">Clarity</span>
+                <span
+                  class="text-2xl font-medium hover:bg-red-600 transition duration-500"
+                  >Clarity</span
+                >
               </a>
             </div>
 
@@ -48,29 +51,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
 
         <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
-          <div class="h-64 overflow-hidden">
-            <img
-              alt=""
-              src="https://picsum.photos/611/411"
-              class="object-cover"
-            />
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl mb-4">Just another post.</h3>
-            <p>
-              Augue interdum velit euismod in pellentesque massa placerat duis
-              ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed
-              turpis tincidunt id aliquet risus feugiat in ante metus, dictum at
-              tempor.
-            </p>
-            <div class="mt-4 text-xs text-gray-400">
-              <span>March 10, 1992</span>
+          <a href="/about">
+            <div class="group">
+              <div class="h-64 overflow-hidden bg-center bg-cover relative">
+                <img
+                  alt=""
+                  src="https://fastly.picsum.photos/id/628/536/354.jpg?hmac=W_-CeOM1wK13bBoAisLYOEJaIZwd9r2wM5VpQBb7uKA"
+                  class="h-64 w-full object-cover smooth"
+                />
+                <div
+                  class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-500"
+                >
+                  <div class="flex h-full justify-center items-center">
+                    <div
+                      class="text-white text-md font-bold translate-y-4 group-hover:translate-y-0 transition duration-300"
+                    >
+                      View More
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl mb-4">Just another post.</h3>
+                <p>
+                  Augue interdum velit euismod in pellentesque massa placerat
+                  duis ultricies lacus sed turpis tincidunt. Duis ultricies
+                  lacus sed turpis tincidunt id aliquet risus feugiat in ante
+                  metus, dictum at tempor.
+                </p>
+                <div class="mt-4 text-xs text-gray-400">
+                  <span>March 10, 1992</span>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <div
-          class="grid-item bg-slate-600 text-white rounded-xl mb-6 overflow-hidden shadow"
+          class="grid-item bg-stone-600 text-white rounded-xl mb-6 overflow-hidden shadow"
         >
           <div class="p-6">
             <h3 class="text-xl mb-4">Just another post.</h3>
@@ -98,7 +116,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         >
           <div class="flex h-full items-end">
             <div
-              class="text-xs text-white ml-6 mb-6 bg-slate-600 px-3 py-1 rounded-md"
+              class="text-xs text-white ml-6 mb-6 bg-stone-600 px-3 py-1 rounded-md"
             >
               <span>March 10, 1992</span>
             </div>
@@ -128,14 +146,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
 
         <div
-          class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-          style="background-image: url(https://picsum.photos/603/403)"
+          class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative"
         >
-          <div class="flex h-full items-end">
-            <div
-              class="text-xs text-white ml-6 mb-6 bg-slate-600 px-3 py-1 rounded-md"
-            >
-              <span>March 10, 1992</span>
+          <img
+            alt=""
+            src="https://fastly.picsum.photos/id/887/536/354.jpg?hmac=BhB_p4OMZPihyzYBh9wVkmcPaGrf_e8cvNFz4zT78o8"
+            class="object-cover h-96 w-full smooth"
+          />
+
+          <div class="absolute top-0 left-0 h-full">
+            <div class="flex h-full items-end">
+              <div
+                class="text-xs text-white ml-6 mb-6 bg-stone-600 px-3 py-1 rounded-md"
+              >
+                <span>March 10, 1992 test</span>
+              </div>
             </div>
           </div>
         </div>
@@ -220,3 +245,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     items: ".grid-item",
   });
 </script>
+
+<style>
+  .smooth {
+    transform: translate3d(0, 0, 1px);
+  }
+</style>
