@@ -9,7 +9,15 @@ export default {
       fontFamily: {
         body: ["Open Sans", "sans-serif"],
       },
+      height: {
+        "104": "26rem",
+        "112": "28rem",
+        "120": "30rem",
+        "128": "32rem",
+        "136": "34rem",
+      },
     },
   },
+  safelist: ["h-64", "h-96", "h-128"],
   plugins: [],
 };

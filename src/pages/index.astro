@@ -65,24 +65,21 @@ import ImageCard from "../components/ImageCard.astro";
           pubDate="Mar 10, 1992"
         />
 
-        <div
-          class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-          style="background-image: url(https://picsum.photos/600/400)"
-        >
-        </div>
+        <ImageCard
+          title="Just another post"
+          imageUrl="https://picsum.photos/600/400"
+          imageAlt="hello world"
+          pubDate="Mar 10, 1992"
+          size="medium"
+        />
 
-        <div
-          class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-          style="background-image: url(https://picsum.photos/601/401)"
-        >
-          <div class="flex h-full items-end">
-            <div
-              class="text-xs text-white ml-6 mb-6 bg-stone-600 px-3 py-1 rounded-md"
-            >
-              <span>March 10, 1992</span>
-            </div>
-          </div>
-        </div>
+        <ImageCard
+          title="Just another post"
+          imageUrl="https://picsum.photos/601/401"
+          imageAlt="hello world"
+          pubDate="Mar 10, 1992"
+          size="medium"
+        />
 
         <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
           <div class="h-64 overflow-hidden">
@@ -111,6 +108,7 @@ import ImageCard from "../components/ImageCard.astro";
           imageUrl="https://picsum.photos/611/411"
           imageAlt="hello world"
           pubDate="Mar 10, 1992"
+          size="medium"
         />
 
         <div

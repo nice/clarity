@@ -4,20 +4,34 @@ interface Props {
   imageAlt: string;
   imageUrl: string;
   pubDate: string;
+  size: "small" | "medium" | "large";
 }
 
-const { title, imageUrl, imageAlt, pubDate } = Astro.props;
+const { title, imageUrl, imageAlt, pubDate, size } = Astro.props;
+
+let height;
+switch (size) {
+  case "small":
+    height = 64;
+    break;
+  case "medium":
+    height = 96;
+    break;
+  case "large":
+    height = 128;
+    break;
+}
 ---
 
 <div
-  class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative"
+  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative`
 >
   <a href="">
     <div class="group relative">
       <img
         alt={imageAlt}
         src={imageUrl}
-        class="h-96 w-full object-cover smooth bg-gray-100 text-gray-100"
+        class=`h-${height} w-full object-cover smooth bg-gray-100 text-gray-100`
       />
 
       <div
