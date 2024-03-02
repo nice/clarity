@@ -4,23 +4,12 @@ interface Props {
   imageAlt: string;
   imageUrl: string;
   pubDate: string;
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
 }
 
+import { getImageHeight } from "../helpers/utils";
 const { title, imageUrl, imageAlt, pubDate, size } = Astro.props;
-
-let height;
-switch (size) {
-  case "small":
-    height = 64;
-    break;
-  case "medium":
-    height = 96;
-    break;
-  case "large":
-    height = 128;
-    break;
-}
+const height = getImageHeight(size);
 ---
 
 <div

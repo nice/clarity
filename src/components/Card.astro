@@ -5,19 +5,22 @@ interface Props {
   imageAlt: string;
   imageUrl: string;
   pubDate: string;
+  size?: "small" | "medium" | "large";
 }
 
-const { title, excerpt, imageUrl, imageAlt, pubDate } = Astro.props;
+import { getImageHeight } from "../helpers/utils";
+const { title, excerpt, imageUrl, imageAlt, pubDate, size } = Astro.props;
+const height = getImageHeight(size);
 ---
 
 <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
   <a href="/about">
     <div class="group">
-      <div class="h-64 overflow-hidden bg-center bg-cover relative">
+      <div class=`h-${height} overflow-hidden bg-center bg-cover relative`>
         <img
           alt={imageAlt}
           src={imageUrl}
-          class="h-64 w-full object-cover smooth bg-gray-100 text-gray-100"
+          class=`h-${height} w-full object-cover smooth bg-gray-100 text-gray-100`
         />
         <div
           class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
