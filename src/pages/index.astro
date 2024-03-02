@@ -3,6 +3,10 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import Card from "../components/Card.astro";
+import TextCard from "../components/TextCard.astro";
+import ImageCard from "../components/ImageCard.astro";
 ---
 
 <!doctype html>
@@ -47,75 +51,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           <div class="grid-col w-1/3 hidden lg:block"></div>
         </div>
 
-        <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
-          <a href="/about">
-            <div class="group">
-              <div class="h-64 overflow-hidden bg-center bg-cover relative">
-                <img
-                  alt=""
-                  src="https://fastly.picsum.photos/id/628/536/354.jpg?hmac=W_-CeOM1wK13bBoAisLYOEJaIZwd9r2wM5VpQBb7uKA"
-                  class="h-64 w-full object-cover smooth"
-                />
-                <div
-                  class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
-                >
-                  <div class="flex h-full justify-center items-center">
-                    <div
-                      class="text-white text-md font-bold translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
-                    >
-                      View More
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl mb-4">Just another post.</h3>
-                <p>
-                  Augue interdum velit euismod in pellentesque massa placerat
-                  duis ultricies lacus sed turpis tincidunt. Duis ultricies
-                  lacus sed turpis tincidunt id aliquet risus feugiat in ante
-                  metus, dictum at tempor.
-                </p>
-                <div class="mt-4 text-xs text-gray-400">
-                  <span>March 10, 1992</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="grid-item bg-stone-600 text-white rounded-xl mb-6 overflow-hidden shadow"
-        >
-          <a href="">
-            <div class="group relative">
-              <div class="p-6">
-                <h3 class="text-xl mb-4">Just another post.</h3>
-                <p>
-                  Augue interdum velit euismod in pellentesque massa placerat
-                  duis ultricies lacus sed turpis tincidunt. Duis ultricies
-                  lacus sed turpis tincidunt id aliquet risus feugiat in ante
-                  metus, dictum at tempor.
-                </p>
-                <div class="mt-4 text-xs">
-                  <span>March 10, 1992</span>
-                </div>
-              </div>
-
-              <div
-                class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-stone-600 transition duration-300 ease-out"
-              >
-                <div class="flex h-full justify-center items-center">
-                  <div
-                    class="text-white text-md font-bold translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
-                  >
-                    View More
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <Card />
+        <TextCard />
 
         <div
           class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
@@ -158,44 +95,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           </div>
         </div>
 
-        <div
-          class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative"
-        >
-          <a href="">
-            <div class="group relative">
-              <img
-                alt=""
-                src="https://fastly.picsum.photos/id/887/536/354.jpg?hmac=BhB_p4OMZPihyzYBh9wVkmcPaGrf_e8cvNFz4zT78o8"
-                class="h-96 w-full object-cover smooth"
-              />
-
-              <div
-                class="absolute top-0 left-0 h-full group-hover:opacity-0 transition duration-300"
-              >
-                <div class="flex h-full items-end">
-                  <div
-                    class="text-xs text-white ml-6 mb-6 bg-stone-600 px-3 py-1 rounded-md"
-                  >
-                    <span>March 10, 1992 test</span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
-              >
-                <div class="flex h-full justify-center items-center">
-                  <div
-                    class="text-white text-center text-md font-bold translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
-                  >
-                    <div class="text-xl">Just another Post</div>
-                    <div class="text-md">View More</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <ImageCard />
 
         <div
           class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
