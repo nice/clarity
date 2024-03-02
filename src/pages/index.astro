@@ -87,18 +87,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <div
           class="grid-item bg-stone-600 text-white rounded-xl mb-6 overflow-hidden shadow"
         >
-          <div class="p-6">
-            <h3 class="text-xl mb-4">Just another post.</h3>
-            <p>
-              Augue interdum velit euismod in pellentesque massa placerat duis
-              ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed
-              turpis tincidunt id aliquet risus feugiat in ante metus, dictum at
-              tempor.
-            </p>
-            <div class="mt-4 text-xs">
-              <span>March 10, 1992</span>
+          <a href="">
+            <div class="group relative">
+              <div class="p-6">
+                <h3 class="text-xl mb-4">Just another post.</h3>
+                <p>
+                  Augue interdum velit euismod in pellentesque massa placerat
+                  duis ultricies lacus sed turpis tincidunt. Duis ultricies
+                  lacus sed turpis tincidunt id aliquet risus feugiat in ante
+                  metus, dictum at tempor.
+                </p>
+                <div class="mt-4 text-xs">
+                  <span>March 10, 1992</span>
+                </div>
+              </div>
+
+              <div
+                class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-stone-600 transition duration-300 ease-out"
+              >
+                <div class="flex h-full justify-center items-center">
+                  <div
+                    class="text-white text-md font-bold translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
+                  >
+                    View More
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <div
