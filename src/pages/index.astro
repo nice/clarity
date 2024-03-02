@@ -49,22 +49,14 @@ import ImageCard from "../components/ImageCard.astro";
       size="medium"
     />
 
-    <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
-      <div class="h-64 overflow-hidden">
-        <img alt="" src="https://picsum.photos/602/402" class="object-cover" />
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl mb-4">Just another post.</h3>
-        <p>
-          Augue interdum velit euismod in pellentesque massa placerat duis
-          ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis
-          tincidunt id aliquet risus feugiat in ante metus, dictum at tempor.
-        </p>
-        <div class="mt-4 text-xs text-gray-400">
-          <span>March 10, 1992</span>
-        </div>
-      </div>
-    </div>
+    <Card
+      title="Just another post"
+      excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
+      imageUrl="https://picsum.photos/602/402"
+      imageAlt="hello world"
+      pubDate="Mar 10, 1992"
+      size="small"
+    />
 
     <ImageCard
       title="Just another post"
