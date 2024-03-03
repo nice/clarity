@@ -2,8 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
+import Seo from "../components/Seo.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import TextCard from "../components/TextCard.astro";
@@ -11,6 +11,10 @@ import ImageCard from "../components/ImageCard.astro";
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <Seo />
+  </Fragment>
+
   <Fragment slot="body">
     <div class="grid">
       <div class="flex gap-6">
