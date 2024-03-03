@@ -7,3 +7,9 @@ export const SITE_IMAGE = "https://picsum.photos/600/400";
 
 export const ACCENT_BACKGROUND_COLOR = "#57534e";
 export const ACCENT_TEXT_COLOR = "#ffffff";
+
+export const MENU_ITEMS = [
+  { name: "About", url: "/about" },
+  { name: "Instagram", url: "https://instagram.com", newTab: true },
+  { name: "Contact", url: "mailto:jayaram@gmx.com?subject=Hello Jayaram" },
+];

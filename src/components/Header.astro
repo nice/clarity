@@ -1,6 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, MENU_ITEMS } from "../consts";
 ---
 
 <header>
@@ -37,11 +37,22 @@ import { SITE_TITLE } from "../consts";
         id="menu"
         class="w-full md:w-auto hidden md:flex mt-6 md:mt-0 flex flex-col md:flex-row justify-between gap-6 md:gap-12 text-xl underline text-gray-600 hover:text-black transition duration-300"
       >
-        <li><a href="/about">About</a></li>
-        <li><a target="_blank" href="https://instagram.com">Instagram</a></li>
-        <li>
-          <a href="mailto:jayaram@gmx.com?subject=Hello Jayaram">Contact</a>
-        </li>
+        {
+          MENU_ITEMS.map((item) => {
+            if (item.url.trim() === "") return null;
+
+            let attributes = {};
+            if (item.newTab) attributes = { target: "_blank" };
+
+            return (
+              <li>
+                <a href={item.url} {...attributes}>
+                  {item.name}
+                </a>
+              </li>
+            );
+          })
+        }
       </ul>
     </div>
   </nav>
