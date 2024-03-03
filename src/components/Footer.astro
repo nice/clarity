@@ -1,9 +1,10 @@
 ---
+import { SITE_TITLE } from "../consts";
 const today = new Date();
 ---
 
 <footer class="my-6">
   <div class="flex justify-center">
-    <div>&copy; {today.getFullYear()} Clarity Inc.</div>
+    <div>&copy; {today.getFullYear()} {SITE_TITLE}</div>
   </div>
 </footer>
