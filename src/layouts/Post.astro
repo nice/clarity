@@ -1,7 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../helpers/utils.js";
 
 const { title, imageUrl, imageAlt, pubDate } = Astro.props;
+
+let formattedDate = formatDate(pubDate);
 ---
 
 <Layout>
@@ -9,7 +12,7 @@ const { title, imageUrl, imageAlt, pubDate } = Astro.props;
     <article class="max-w-screen-lg mx-auto mb-12">
       <div class="text-center mb-12">
         <h3 class="text-4xl leading mb-2">{title}</h3>
-        <span class="text-gray-600">{pubDate}</span>
+        <span class="text-gray-600">{formattedDate}</span>
       </div>
 
       <div class="mb-12">

@@ -17,4 +17,18 @@ function getImageHeight(size) {
   return height;
 }
 
-export { getImageHeight };
+function formatDate(date) {
+  try {
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    return date.toLocaleDateString("en-US", options);
+  } catch (e) {
+    return date;
+  }
+}
+
+export { getImageHeight, formatDate };
