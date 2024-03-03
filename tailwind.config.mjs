@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        "2xl": "1280px",
+        "2xl": "1312px",
       },
       fontFamily: {
         body: ["Open Sans", "sans-serif"],
