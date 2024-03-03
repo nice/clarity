@@ -5,11 +5,16 @@ interface Props {
   pubDate: string;
 }
 
+import { getAccentStyle } from "../helpers/utils";
+
 const { title, excerpt, pubDate } = Astro.props;
+
+const style = getAccentStyle();
 ---
 
 <div
   class="grid-item bg-stone-600 text-white rounded-xl mb-6 overflow-hidden shadow"
+  style={style}
 >
   <a href="/posts/first-post">
     <div class="group relative">
@@ -22,11 +27,12 @@ const { title, excerpt, pubDate } = Astro.props;
       </div>
 
       <div
-        class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-stone-600 transition duration-300 ease-out"
+        class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-stone-600 text-white transition duration-300 ease-out"
+        style={style}
       >
         <div class="flex h-full justify-center items-center">
           <div
-            class="text-white text-md font-medium translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
+            class="text-md font-medium translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
           >
             View More
           </div>

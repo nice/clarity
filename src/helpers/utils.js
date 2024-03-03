@@ -1,3 +1,5 @@
+import { ACCENT_TEXT_COLOR, ACCENT_BACKGROUND_COLOR } from "../consts";
+
 function getImageHeight(size) {
   let height;
   switch (size) {
@@ -31,4 +33,18 @@ function formatDate(date) {
   }
 }
 
-export { getImageHeight, formatDate };
+function getAccentStyle() {
+  let style = "";
+
+  if (ACCENT_TEXT_COLOR.length) {
+    style += `color: ${ACCENT_TEXT_COLOR};`;
+  }
+
+  if (ACCENT_BACKGROUND_COLOR.length) {
+    style += `background-color: ${ACCENT_BACKGROUND_COLOR};`;
+  }
+
+  return style;
+}
+
+export { getImageHeight, formatDate, getAccentStyle };

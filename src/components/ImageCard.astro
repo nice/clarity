@@ -6,9 +6,11 @@ interface Props {
   pubDate: string;
   size?: "small" | "medium" | "large";
 }
+import { getImageHeight, getAccentStyle } from "../helpers/utils";
 
-import { getImageHeight } from "../helpers/utils";
 const { title, imageUrl, imageAlt, pubDate, size } = Astro.props;
+
+const style = getAccentStyle();
 const height = getImageHeight(size);
 ---
 
@@ -28,7 +30,8 @@ const height = getImageHeight(size);
       >
         <div class="flex h-full items-end">
           <div
-            class="text-xs text-white ml-6 mb-6 bg-stone-600 px-3 py-1 rounded-md"
+            class="text-xs bg-stone-600 text-white ml-6 mb-6 px-3 py-1 rounded-md"
+            style={style}
           >
             <span>{pubDate}</span>
           </div>
