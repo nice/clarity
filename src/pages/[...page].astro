@@ -3,16 +3,26 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import type { Page } from "astro";
 import Seo from "../components/Seo.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import TextCard from "../components/TextCard.astro";
 import ImageCard from "../components/ImageCard.astro";
+import Pagination from "../components/Pagination.astro";
 
 import { getCollection } from "astro:content";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+
+export async function getStaticPaths({ paginate }) {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return paginate(posts, { pageSize: 10 });
+}
+
+// All paginated data is passed on the "page" prop
+const { page }: { page: Page } = Astro.props;
 ---
 
 <Layout>
@@ -29,7 +39,7 @@ const posts = (await getCollection("blog")).sort(
       </div>
 
       {
-        posts.map((post) => {
+        page.data.map((post) => {
           let card = null;
 
           if (post.data.cardType === "default") {
@@ -46,19 +56,6 @@ const posts = (await getCollection("blog")).sort(
     </div>
     <!-- .grid -->
 
-    <!-- pagination -->
-    <div class="flex justify-between my-12">
-      <div>
-        <div class="text-2xl">
-          <a href="">Previous</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="text-2xl">
-          <a href="">Next</a>
-        </div>
-      </div>
-    </div></Fragment
-  >
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </Fragment>
 </Layout>
