@@ -8,6 +8,11 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import TextCard from "../components/TextCard.astro";
 import ImageCard from "../components/ImageCard.astro";
+
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <Layout>
@@ -23,96 +28,21 @@ import ImageCard from "../components/ImageCard.astro";
         <div class="grid-col w-1/3 hidden lg:block"></div>
       </div>
 
-      <Card
-        title="Just another post"
-        excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
-        imageUrl="https://picsum.photos/613/413"
-        imageAlt="hello world"
-        pubDate="Mar 10, 1992"
-        size="small"
-      />
+      {
+        posts.map((post) => {
+          let card = null;
 
-      <TextCard
-        title="Just another post"
-        excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
-        pubDate="Mar 10, 1992"
-      />
+          if (post.data.cardType === "default") {
+            card = <Card slug={post.slug} {...post.data} />;
+          } else if (post.data.cardType === "text") {
+            card = <TextCard slug={post.slug} {...post.data} />;
+          } else if (post.data.cardType === "image") {
+            card = <ImageCard slug={post.slug} {...post.data} />;
+          }
 
-      <ImageCard
-        title="Just another post"
-        imageUrl="https://picsum.photos/600/400"
-        imageAlt="hello world"
-        pubDate="Mar 10, 1992"
-        size="medium"
-      />
-
-      <ImageCard
-        title="Just another post"
-        imageUrl="https://picsum.photos/601/401"
-        imageAlt="hello world"
-        pubDate="Mar 10, 1992"
-        size="medium"
-      />
-
-      <Card
-        title="Just another post"
-        excerpt="Augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus, dictum at tempor."
-        imageUrl="https://picsum.photos/602/402"
-        imageAlt="hello world"
-        pubDate="Mar 10, 1992"
-        size="small"
-      />
-
-      <ImageCard
-        title="Just another post"
-        imageUrl="https://picsum.photos/611/411"
-        imageAlt="hello world"
-        pubDate="Mar 10, 1992"
-        size="medium"
-      />
-
-      <div
-        class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/604/404)"
-      >
-      </div>
-      <div
-        class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/605/405)"
-      >
-      </div>
-      <div
-        class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/600/400)"
-      >
-      </div>
-
-      <div
-        class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/601/401)"
-      >
-      </div>
-
-      <div
-        class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/602/402)"
-      >
-      </div>
-      <div
-        class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/603/403)"
-      >
-      </div>
-      <div
-        class="grid-item h-64 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/604/404)"
-      >
-      </div>
-      <div
-        class="grid-item h-96 bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow"
-        style="background-image: url(https://picsum.photos/605/405)"
-      >
-      </div>
+          return card;
+        })
+      }
     </div>
     <!-- .grid -->
 

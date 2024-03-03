@@ -1,15 +1,10 @@
 ---
-interface Props {
-  title: string;
-  excerpt: string;
-  pubDate: string;
-}
+import { getAccentStyle, formatDate } from "../helpers/utils";
 
-import { getAccentStyle } from "../helpers/utils";
-
-const { title, excerpt, pubDate } = Astro.props;
+const { slug, title, excerpt, pubDate } = Astro.props;
 
 const style = getAccentStyle();
+const formattedDate = formatDate(pubDate);
 ---
 
 <div
@@ -22,7 +17,7 @@ const style = getAccentStyle();
         <h3 class="text-lg font-medium mb-4">{title}</h3>
         <p>{excerpt}</p>
         <div class="mt-4 text-xs">
-          <span>{pubDate}</span>
+          <span>{formattedDate}</span>
         </div>
       </div>
 

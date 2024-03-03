@@ -1,20 +1,15 @@
 ---
-interface Props {
-  title: string;
-  excerpt: string;
-  imageAlt: string;
-  imageUrl: string;
-  pubDate: string;
-  size?: "small" | "medium" | "large";
-}
+import { getImageHeight, formatDate } from "../helpers/utils";
 
-import { getImageHeight } from "../helpers/utils";
-const { title, excerpt, imageUrl, imageAlt, pubDate, size } = Astro.props;
-const height = getImageHeight(size);
+const { slug, title, excerpt, imageUrl, imageAlt, pubDate, cardSize } =
+  Astro.props;
+
+const height = getImageHeight(cardSize);
+const formattedDate = formatDate(pubDate);
 ---
 
 <div class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow">
-  <a href="/about">
+  <a href={`/posts/${slug}`}>
     <div class="group">
       <div class=`h-${height} overflow-hidden bg-center bg-cover relative`>
         <img
@@ -38,7 +33,7 @@ const height = getImageHeight(size);
         <h3 class="text-lg font-medium mb-4">{title}</h3>
         <p class="text-md">{excerpt}</p>
         <div class="mt-4 text-xs text-gray-600">
-          <span>{pubDate}</span>
+          <span>{formattedDate}</span>
         </div>
       </div>
     </div>
