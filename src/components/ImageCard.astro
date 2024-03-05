@@ -1,7 +1,8 @@
 ---
 import { getImageHeight, getAccentStyle, formatDate } from "../helpers/utils";
 
-const { slug, title, imageUrl, imageAlt, pubDate, cardSize } = Astro.props;
+const { slug, title, imageUrl, imageAlt, pubDate, cardSize, tabindex } =
+  Astro.props;
 
 const style = getAccentStyle();
 const height = getImageHeight(cardSize);
@@ -9,9 +10,9 @@ const formattedDate = formatDate(pubDate);
 ---
 
 <div
-  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative`
+  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative focus-within:ring-4`
 >
-  <a href={`/posts/${slug}`}>
+  <a href={`/posts/${slug}`} class="outline-none" {tabindex}>
     <div class="group relative">
       <img
         alt={imageAlt}

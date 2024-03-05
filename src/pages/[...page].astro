@@ -36,15 +36,16 @@ const { page }: { page: Page } = Astro.props;
       </div>
 
       {
-        page.data.map((post) => {
+        page.data.map((post, index) => {
           let card = null;
+          let tabindex = index + 10;
 
           if (post.data.cardType === "default") {
-            card = <Card slug={post.slug} {...post.data} />;
+            card = <Card slug={post.slug} {...post.data} {tabindex} />;
           } else if (post.data.cardType === "text") {
-            card = <TextCard slug={post.slug} {...post.data} />;
+            card = <TextCard slug={post.slug} {...post.data} {tabindex} />;
           } else if (post.data.cardType === "image") {
-            card = <ImageCard slug={post.slug} {...post.data} />;
+            card = <ImageCard slug={post.slug} {...post.data} {tabindex} />;
           }
 
           return card;
