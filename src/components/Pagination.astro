@@ -7,7 +7,7 @@ const { prevUrl, nextUrl } = Astro.props;
   <div>
     {
       prevUrl && (
-        <div class="text-xl focus-within:ring-2">
+        <div class="text-xl has-[:focus-visible]:ring-4">
           <a href={prevUrl} class="outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const { prevUrl, nextUrl } = Astro.props;
   <div>
     {
       nextUrl && (
-        <div class="text-xl focus-within:ring-2">
+        <div class="text-xl has-[:focus-visible]:ring-4">
           <a href={nextUrl} class="outline-none">
             Older
             <svg

@@ -10,7 +10,7 @@ const formattedDate = formatDate(pubDate);
 ---
 
 <div
-  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative focus-within:ring-4`
+  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative has-[:focus-visible]:ring-4`
 >
   <a href={`/posts/${slug}`} class="outline-none" {tabindex}>
     <div class="group relative">
