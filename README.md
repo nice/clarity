@@ -8,13 +8,14 @@ Demo: https://clarity-astro-theme.netlify.app/
 - ✅ Masonry layout (lightweight version)
 - ✅ 3 card types (default, text only, image only)
 - ✅ 3 card sizes (small, medium, large)
-- ✅ Customizable accent colors (see Configuration)
+- ✅ Customizable accent colors (see configuration)
+- ✅ Image fade in animation (with. noscript fallback)
 - ✅ Good Lighthouse performance
 - ✅ SEO-friendly
 - ✅ Sitemap support
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
-- ✅ View transitions support
+- ✅ View transitions support (see configuration)
 
 Lighthouse performance
 
@@ -52,6 +53,46 @@ Theme configuration can be found inside `src/consts.ts`
 **!!! Important !!!** Please make sure to update the default email ids, site title and descriptions.
 
 You can also change the theme accent colors, menu items and posts per page from the `src/consts.ts` file.
+
+### View transitions
+
+Enable view transitions for Clarity theme with the below few steps
+
+1. Import `ViewTransitions` in `src/layouts/Layout.astro`
+
+```
+---
+import { ViewTransitions } from 'astro:transitions';
+---
+```
+
+2. Add the `<ViewTransitions />` tag inside `<head>` of the same file
+
+```
+<head>
+  <ViewTransitions />
+</head>
+```
+
+3. Add `transition:animate` attribute to opening `<html>` tag in the same file.
+
+```
+<html transition:animate="fade">
+</html>
+```
+
+4. Add the below Clarity theme specific script just before the closing `</html>` tag in the same file.
+
+```
+
+<!-- other scripts -->
+
+<script>
+  document.addEventListener("astro:after-swap", initGrid);
+  document.addEventListener("astro:after-swap", initAppear);
+</script>
+```
+
 
 # Support
 If you need any further help:
