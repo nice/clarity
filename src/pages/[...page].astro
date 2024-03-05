@@ -14,7 +14,7 @@ export async function getStaticPaths({ paginate }) {
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 
-  return paginate(posts, { pageSize: 10 });
+  return paginate(posts, { pageSize: 12 });
 }
 
 // All paginated data is passed on the "page" prop
