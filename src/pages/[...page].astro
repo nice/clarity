@@ -6,6 +6,7 @@ import Card from "../components/Card.astro";
 import TextCard from "../components/TextCard.astro";
 import ImageCard from "../components/ImageCard.astro";
 import Pagination from "../components/Pagination.astro";
+import { POSTS_PER_PAGE } from "../consts";
 
 import { getCollection } from "astro:content";
 
@@ -14,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 
-  return paginate(posts, { pageSize: 12 });
+  return paginate(posts, { pageSize: POSTS_PER_PAGE });
 }
 
 // All paginated data is passed on the "page" prop

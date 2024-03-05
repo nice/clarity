@@ -13,3 +13,5 @@ export const MENU_ITEMS = [
   { name: "Instagram", url: "https://instagram.com", newTab: true },
   { name: "Contact", url: "mailto:jayaram@gmx.com?subject=Hello Jayaram" },
 ];
+
+export const POSTS_PER_PAGE = 12;
