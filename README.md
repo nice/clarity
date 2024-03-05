@@ -2,15 +2,17 @@
 
 ![screenshot-clarity-astro-theme netlify app-2024 03 05-19_13_15](https://github.com/nice/clarity/assets/2760100/c1289b35-73ed-46bb-b4ef-1754484e70fe)
 
-# Features:
+# Features
 - ✅ Masonry layout (lightweight version)
 - ✅ 3 card types (default, text only, image only)
 - ✅ 3 card sizes (small, medium, large)
+- ✅ Customizable accent colors (see Configuration)
 - ✅ Good Lighthouse performance
 - ✅ SEO-friendly
 - ✅ Sitemap support
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
+- ✅ View transitions support
 
 Lighthouse performance
 
@@ -41,4 +43,12 @@ npm run dev
 ```
 npm run build
 ```
+
+## Configuration
+
+Theme configuration can be found inside `src/consts.ts`
+**!!! Important !!!** Please make sure to update the default email ids, site title and descriptions.
+
+You can also change the theme accent colors, menu items and posts per page from the `src/consts.ts` file.
+
 
