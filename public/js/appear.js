@@ -7,19 +7,23 @@
 
 */
 
-const images = document.getElementsByTagName("img");
+function initAppear() {
+  const images = document.getElementsByTagName("img");
 
-for (let image of images) {
-  image.addEventListener("load", appear);
-  image.style.opacity = "0";
+  for (let image of images) {
+    image.addEventListener("load", appear);
+    image.style.opacity = "0";
 
-  // for cached images
-  if (image.complete) {
-    appear.bind(image)();
+    // for cached images
+    if (image.complete) {
+      appear.bind(image)();
+    }
+  }
+
+  function appear() {
+    this.style.transition = "opacity 2s";
+    this.style.opacity = "1";
   }
 }
 
-function appear() {
-  this.style.transition = "opacity 2s";
-  this.style.opacity = "1";
-}
+initAppear();
