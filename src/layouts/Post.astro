@@ -1,13 +1,18 @@
 ---
+import Seo from "../components/Seo.astro";
 import Layout from "../layouts/Layout.astro";
 import { formatDate } from "../helpers/utils.js";
 
-const { title, imageUrl, imageAlt, pubDate } = Astro.props;
+const { title, description, imageUrl, imageAlt, pubDate } = Astro.props;
 
 let formattedDate = formatDate(pubDate);
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <Seo {title} {description} image={imageUrl} />
+  </Fragment>
+
   <Fragment slot="body">
     <article class="max-w-screen-lg mx-auto mb-12">
       <div class="text-center mb-12">
