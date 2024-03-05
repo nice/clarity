@@ -51,4 +51,11 @@ Theme configuration can be found inside `src/consts.ts`
 
 You can also change the theme accent colors, menu items and posts per page from the `src/consts.ts` file.
 
+# Support
+If you need any further help:
 
+Please raise an issue or reach out to `jayaram@gmx.com`
+
+If you want to support development of this and newer themes, you can buy me a coffee.
+
+<a href="https://www.buymeacoffee.com/JayaramPai" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
