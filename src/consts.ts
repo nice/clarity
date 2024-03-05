@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Clarity";
 export const SITE_DESCRIPTION = "Minimal blog theme for Astro!";
-export const SITE_IMAGE = "/placeholder-site-image.png";
+export const SITE_IMAGE = "/placeholder-site-image.jpg";
 
 export const ACCENT_BACKGROUND_COLOR = "#57534e";
 export const ACCENT_TEXT_COLOR = "#ffffff";
