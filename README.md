@@ -50,6 +50,7 @@ npm run build
 ## Configuration
 
 Theme configuration can be found inside `src/consts.ts`
+
 **!!! Important !!!** Please make sure to update the default email ids, site title and descriptions.
 
 You can also change the theme accent colors, menu items and posts per page from the `src/consts.ts` file.
