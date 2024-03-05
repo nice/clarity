@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "Clarity";
-export const SITE_DESCRIPTION = "Minimal theme for Astro!";
+export const SITE_DESCRIPTION = "Minimal blog theme for Astro!";
 export const SITE_IMAGE = "/placeholder-site-image.png";
 
 export const ACCENT_BACKGROUND_COLOR = "#57534e";
