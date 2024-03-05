@@ -1,5 +1,7 @@
 # Clarity: Minimal blog theme for Astro!
 
+Demo: https://clarity-astro-theme.netlify.app/
+
 ![screenshot-clarity-astro-theme netlify app-2024 03 05-19_13_15](https://github.com/nice/clarity/assets/2760100/c1289b35-73ed-46bb-b4ef-1754484e70fe)
 
 # Features
