@@ -91,6 +91,7 @@ import { ViewTransitions } from 'astro:transitions';
 <script>
   document.addEventListener("astro:after-swap", initGrid);
   document.addEventListener("astro:after-swap", initAppear);
+  document.addEventListener("astro:after-swap", initMenu);
 </script>
 ```
 
