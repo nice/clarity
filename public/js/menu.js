@@ -4,7 +4,6 @@ function initMenu() {
 
   if (burger && menu) {
     burger.addEventListener("click", function () {
-      console.log("fff");
       menu.classList.toggle("hidden");
     });
   }
