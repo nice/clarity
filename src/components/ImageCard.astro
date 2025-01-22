@@ -1,0 +1,50 @@
+---
+import { getImageHeight, getAccentStyle, formatDate } from "../helpers/utils";
+
+const { slug, title, imageUrl, imageAlt, pubDate, cardSize, tabindex } =
+  Astro.props;
+
+const style = getAccentStyle();
+const height = getImageHeight(cardSize);
+const formattedDate = formatDate(pubDate);
+---
+
+<div
+  class=`grid-item h-${height} bg-white rounded-xl mb-6 overflow-hidden bg-center bg-cover shadow relative has-[:focus-visible]:ring-4`
+>
+  <a href={`/posts/${slug}`} class="outline-none" {tabindex}>
+    <div class="group relative">
+      <img
+        alt={imageAlt}
+        src={imageUrl}
+        class=`h-${height} w-full object-cover smooth bg-gray-100 text-gray-100`
+      />
+
+      <div
+        class="absolute top-0 left-0 h-full group-hover:opacity-0 transition duration-300"
+      >
+        <div class="flex h-full items-end">
+          <div
+            class="text-xs bg-stone-600 text-white ml-6 mb-6 px-3 py-1 rounded-md"
+            style={style}
+          >
+            <span>{formattedDate}</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
+      >
+        <div class="flex h-full justify-center items-center">
+          <div
+            class="text-white text-center text-md font-medium translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
+          >
+            <div class="text-lg mb-1">{title}</div>
+            <div class="text-base">View More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

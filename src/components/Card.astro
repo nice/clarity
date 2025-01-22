@@ -1,0 +1,51 @@
+---
+import { getImageHeight, formatDate } from "../helpers/utils";
+
+const {
+  slug,
+  title,
+  excerpt,
+  imageUrl,
+  imageAlt,
+  pubDate,
+  cardSize,
+  tabindex,
+} = Astro.props;
+
+const height = getImageHeight(cardSize);
+const formattedDate = formatDate(pubDate);
+---
+
+<div
+  class="grid-item bg-white rounded-xl mb-6 overflow-hidden shadow has-[:focus-visible]:ring-4"
+>
+  <a href={`/posts/${slug}`} class="outline-none" {tabindex}>
+    <div class="group">
+      <div class=`h-${height} overflow-hidden bg-center bg-cover relative`>
+        <img
+          alt={imageAlt}
+          src={imageUrl}
+          class=`h-${height} w-full object-cover smooth bg-gray-100 text-gray-100`
+        />
+        <div
+          class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-black/60 transition duration-300 ease-out"
+        >
+          <div class="flex h-full justify-center items-center">
+            <div
+              class="text-white text-base font-medium translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
+            >
+              View More
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-medium mb-4">{title}</h3>
+        <p class="text-md">{excerpt}</p>
+        <div class="mt-4 text-xs text-gray-600">
+          <span>{formattedDate}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,38 @@
+---
+import { getAccentStyle, formatDate } from "../helpers/utils";
+
+const { slug, title, excerpt, pubDate, tabindex } = Astro.props;
+
+const style = getAccentStyle();
+const formattedDate = formatDate(pubDate);
+---
+
+<div
+  class="grid-item bg-stone-600 text-white rounded-xl mb-6 overflow-hidden shadow has-[:focus-visible]:ring-4"
+  style={style}
+>
+  <a href={`/posts/${slug}`} class="outline-none" {tabindex}>
+    <div class="group relative">
+      <div class="p-6">
+        <h3 class="text-lg font-medium mb-4">{title}</h3>
+        <p>{excerpt}</p>
+        <div class="mt-4 text-xs">
+          <span>{formattedDate}</span>
+        </div>
+      </div>
+
+      <div
+        class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 w-full h-full bg-stone-600 text-white transition duration-300 ease-out"
+        style={style}
+      >
+        <div class="flex h-full justify-center items-center">
+          <div
+            class="text-md font-medium translate-y-4 group-hover:translate-y-0 transition duration-300 ease-out"
+          >
+            View More
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
